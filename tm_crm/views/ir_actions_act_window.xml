@@ -1,0 +1,132 @@
+<odoo>
+    <!-- TM ORGANISMO -->
+    <record id="action_tm_organismo" model="ir.actions.act_window">
+        <field name="binding_type">action</field>
+        <field name="context">{}</field>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="help"><![CDATA[Organismo]]></field>
+        <field name="name">Organismo</field>
+        <field name="res_model">tm.organismo</field>
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- TM OSDE-->
+    <record id="action_tm_osde" model="ir.actions.act_window">
+        <field name="binding_type">action</field>
+        <field name="context">{}</field>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="help"><![CDATA[Organización Superior de Dirección Empresarial (OSDE)]]></field>
+        <field name="name">OSDE</field>
+        <field name="res_model">tm.osde</field>
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- TM EFGNE-->
+    <record id="action_tm_efgne" model="ir.actions.act_window">
+        <field name="binding_type">action</field>
+        <field name="context">{}</field>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="help"><![CDATA[Empresa o forma de gestión no estatal]]></field>
+        <field name="name">EFGNE</field>
+        <field name="res_model">tm.efgne</field>
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- TM UEBDA-->
+    <record id="action_tm_uebda" model="ir.actions.act_window">
+        <field name="binding_type">action</field>
+        <field name="context">{}</field>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="help"><![CDATA[Unidad Empresarial de Base o Dependencia Autorizada]]></field>
+        <field name="name">UEB o Dependencia</field>
+        <field name="res_model">tm.uebda</field>
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- TM MUNICIPIO-->
+    <record id="action_tm_municipio" model="ir.actions.act_window">
+        <field name="binding_type">action</field>
+        <field name="context">{}</field>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="help"><![CDATA[Municipio]]></field>
+        <field name="name">Municipios de Cuba</field>
+        <field name="res_model">tm.municipio</field>
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- TM PROVEEDOR-->
+    <record id="action_tm_proveedor" model="ir.actions.act_window">
+        <field name="binding_type">action</field>
+        <field name="context">{}</field>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="help"><![CDATA[Proveedores de TM]]></field>
+        <field name="name">Proveedores</field>
+        <field name="res_model">tm.proveedor</field>
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- TM SUCURSAL-->
+    <record id="action_tm_sucursal" model="ir.actions.act_window">
+        <field name="binding_type">action</field>
+        <field name="context">{}</field>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="help"><![CDATA[Sucursal en Cuba]]></field>
+        <field name="name">Sucursales</field>
+        <field name="res_model">tm.sucursal</field>
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- TM TEMATICA PROVEEDOR INTERNACIONAL-->
+    <record id="action_tm_tematica" model="ir.actions.act_window">
+        <field name="binding_type">action</field>
+        <field name="context">{}</field>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="help"><![CDATA[Temáticas de los proveedores internacionales]]></field>
+        <field name="name">Temática</field>
+        <field name="res_model">tm.tematica</field>
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- TM ACTIVIDAD -->
+    <record id="action_tm_actividad" model="ir.actions.act_window">
+        <field name="binding_type">action</field>
+        <field name="context">{}</field>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="help"><![CDATA[Actividades]]></field>
+        <field name="name">Actividades</field>
+        <field name="res_model">tm.actividad</field>
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- TM CONTACTO PROVEEDOR -->
+    <record id="action_tm_contacto_proveedor" model="ir.actions.act_window">
+        <field name="binding_type">action</field>
+        <field name="context">{}</field>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="help"><![CDATA[Contactos de proveedores]]></field>
+        <field name="name">Contactos</field>
+        <field name="res_model">tm.contacto_proveedor</field>
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

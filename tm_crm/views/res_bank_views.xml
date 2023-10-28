@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Creando un banco -->
+        <record id="view_res_bank_form_inherit" model="ir.ui.view">
+            <field name="name">view.res.bank.form.inherit</field>
+            <field name="model">res.bank</field>
+            <field name="inherit_id" ref="base.view_res_bank_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='bank_details']" position="replace">
+                    <group colspan="4">
+                        <group col="1">
+                            <field name="name" placeholder="Escriba nombre del banco"/>
+                        </group>
+                        <group col="3">
+                            <field name="bic" placeholder="Escriba BIC/SWIFT"/>
+                            <field name="sucursal" placeholder="Número de la sucursal"/>
+                        </group>
+                    </group>
+                </xpath>
+                <field name='street2' position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <xpath expr="//field[@name='city']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='state']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='zip']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='country']" position="attributes">
+                    <attribute name="placeholder">Seleccione el país</attribute>
+                </xpath>
+                <xpath expr="//field[@name='street2']" position="after">
+                    <field name="provincia_id" placeholder="Seleccione la provincia"/>
+                    <field name="municipio_id" placeholder="Seleccione el municipio"/>
+                </xpath>
+                <xpath expr="//group[@name='communication_details']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Creando cuenta bancaria -->
+        <record id="view_partner_bank_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.bank.form.inherit</field>
+            <field name="model">res.partner.bank</field>
+            <field name="inherit_id" ref="base.view_partner_bank_form"/>
+            <field name="priority">15</field>
+            <field name="arch" type="xml">
+                 <xpath expr="/form//field[@name='partner_id']" position="attributes">
+                    <attribute name="required">0</attribute>
+                     <attribute name="invisible">1</attribute>
+                 </xpath>
+                 <field name='allow_out_payment' position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <xpath expr="//field[@name='acc_number']" position="attributes">
+                    <attribute name="placeholder">Escriba el número de cuenta</attribute>
+                </xpath>
+                <xpath expr="//field[@name='acc_holder_name']" position="attributes">
+                    <attribute name="string">Titular</attribute>
+                    <attribute name="placeholder">Nombre del titular</attribute>
+                </xpath>
+                <xpath expr="//field[@name='bank_id']" position="attributes">
+                    <attribute name="placeholder">Seleccione o adicione</attribute>
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position="attributes">
+                    <attribute name="placeholder">Seleccione o adicione</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

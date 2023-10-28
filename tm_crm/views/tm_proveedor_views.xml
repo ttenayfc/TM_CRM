@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Formulario Proveedor-->
+        <record id="view_proveedor_form" model="ir.ui.view">
+            <field name="name">view_proveedor_form</field>
+            <field name="model">tm.proveedor</field>
+            <field name="arch" type="xml">
+                <form string="Proveedor">
+                    <div class="o_row">
+                        <group/>
+                        <group/>
+                        <group>
+                            <field name="modelo_fp"/>
+                            <field name="fecha_mod" widget="date"/>
+                        </group>
+                    </div>
+                    <div class="o_row">
+                        <group>
+                            <field name="name" placeholder="Escriba nombre"/>
+                            <field name="siglas" placeholder="Escriba las siglas"/>
+                        </group>
+                        <group><field name="ref" placeholder="Escriba el código"/></group>
+                    </div>
+                    <div class="o_row">
+                        <group>
+                            <group>
+                                <field name="street" widget="text" placeholder="Escriba la dirección"/>
+                                <field name="country_id" placeholder="Seleccione"/>
+                                <field name="state" placeholder="Escriba el estado"/>
+                                <field name="city" placeholder="Escriba la ciudad"/>
+                                <field name="zip" placeholder="Escriba código zip"/>
+                            </group>
+                            <group>
+                                <field name="phone" widget="phone" placeholder="ejemplo: 7-8775100"/>
+                                <field name="email" widget="email" placeholder="ejemplo: correo@domain"/>
+                                <field name="website" widget="url" placeholder="ejemplo: https://www.odoo.com"/>
+                            </group>
+                        </group>
+                    </div>
+                    <div class="o_row">
+                        <group>
+                            <group>
+                                <group><field name="fecha_fundacion" widget="date"/></group>
+                                <group><field name="no_empleados"/></group>
+                            </group>
+                            <group>
+                                <group><field name="capital"/></group>
+                                <group><field name="moneda_id" placeholder="Seleccione"/></group>
+                            </group>
+                        </group>
+                    </div>
+                    <notebook colspan="4">
+                        <page string="Contactos" name="contact_addresses">
+                            <field name="child_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="title"/>
+                                    <field name="phone"/>
+                                    <field name="email"/>
+                                    <field name="country_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Datos bancarios" name="bank_acc_page">
+                            <field name="id" invisible="1"/>
+                            <field name="bank_ids" context="{'default_partner_id':id}">
+                                <tree>
+                                    <field name="acc_number"/>
+                                    <field name="acc_holder_name"/>
+                                    <field name="bank_id"/>
+                                    <field name="currency_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Sucursal" name="sucursal_page">
+                            <group>
+                                <group><field name="casa_matriz" placeholder="Escriba nombre casa matriz"/></group>
+                                <group/>
+                                <group>
+                                    <group><field name="sucursal_id" placeholder="Seleccione o cree"/></group>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Temática" name="tematica_page">
+                            <field name="tematica_id" widget="many2many_tags" placeholder="Seleccione o cree"/>
+                        </page>
+                        <page string="Datos comerciales" name="datos_comerciales">
+                            <group>
+                                <field name="productos" widget="text" placeholder="Escriba los producto(s)"/>
+                                <field name="actividad_id" widget="many2many_tags" placeholder="Seleccione o cree"/>
+                            </group>
+
+                        </page>
+                        <page string="Relaciones" name="relaciones">
+                            <!--Relacion de empresas con las que mantiene relaciones comerciales -->
+                            <group> <!--Relacion de empresas con las que mantiene relaciones comerciales -->
+                                <field name="emp_cub_rel" widget="text"/>
+                            </group>
+                            <group>
+                                <field name="paises_comercializa" widget="many2many_tags_avatar" class="oe_inline" placeholder="Seleccione"/>
+                            </group>
+                        </page>
+                        <page string="Valoración" name="valoracion">
+                            <field name="valoracion" widget="text" placeholder="Escriba la valoración de desempeño de la compañía"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <!-- Formulario Sucursal-->
+        <record id="view_sucursal_form" model="ir.ui.view">
+            <field name="name">view_sucursal_form</field>
+            <field name="model">tm.sucursal</field>
+            <field name="arch" type="xml">
+                <form string="Sucursal">
+                    <div class="o_row">
+                        <group>
+                            <group><field name='name' placeholder="Escriba el nombre"/></group>
+                            <group><field name='sucursal_cuba' placeholder="Seleccione"/></group>
+                            <group><field name='no_licencia' string="No. Licencia" placeholder="Escriba No. Licencia Cámara de Comercio"/></group>
+                        </group>
+                    </div>
+                    <div class="o_row" attrs="{'invisible': [('sucursal_cuba','=', 'no')]}">
+                        <group>
+                            <group colspan="2">
+                                <field name='direccion' widget="text" placeholder="Escriba la dirección"/>
+                                <field name='correo' widget="email" placeholder="ejemplo: correo@domain"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group colspan="2">
+                                <field name='telefono' widget="phone" placeholder="ejemplo: 7-8775100"/>
+                                <field name='fax' widget="phone" placeholder="ejemplo: 7-8775100"/>
+                            </group>
+                        </group>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Formulario Temática-->
+        <record id="view_tematica_form" model="ir.ui.view">
+            <field name="name">view_tematica_form</field>
+            <field name="model">tm.tematica</field>
+            <field name="arch" type="xml">
+                <form string="Temática">
+                    <group>
+                        <group><field name="name" placeholder="Escriba la temática"/></group>
+                        <group/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Formulario Actividad. VER COMO PUEDO APROVECHAR LA VISTA FORM DE TEMATICA-->
+        <record id="view_actividad_form" model="ir.ui.view">
+            <field name="name">view_actividad_form</field>
+            <field name="model">tm.actividad</field>
+            <field name="arch" type="xml">
+                <form string="Actividad">
+                    <group>
+                        <group><field name="name" placeholder="Escriba la actividad"/></group>
+                        <group/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Formulario Contacto Proveedor-->
+        <record id="view_contacto_proveedor_form" model="ir.ui.view">
+            <field name="name">view_contacto_proveedor_form</field>
+            <field name="model">tm.contacto_proveedor</field>
+            <field name="arch" type="xml">
+                <form string="Contacto">
+                    <group>
+                        <group>
+                            <field name="name" placeholder="Escriba nombre completo"/>
+                            <field name="title" placeholder="Escriba el cargo"/>
+                            <field name="country_id" placeholder="Seleccione"/>
+                        </group>
+                        <group>
+                            <field name="phone" placeholder="ejemplo: 7-8775100"/>
+                            <field name="mobile" placeholder="ejemplo: 53-55555555"/>
+                            <field name="email" placeholder="ejemplo: correo@domain"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="category" placeholder="Seleccione"/>
+                    </group>
+                </form>
+
+            </field>
+        </record>
+    </data>
+</odoo>

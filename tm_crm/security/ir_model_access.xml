@@ -1,0 +1,212 @@
+<odoo>
+    <!-- TM ORGANISMO -->
+    <record id="access_tm_organismo_system" model="ir.model.access">
+        <field name="name">TM Organismo System</field>
+        <field name="model_id" ref="model_tm_organismo"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+    <record id="access_tm_organismo_user" model="ir.model.access">
+        <field name="name">TM Organismo User</field>
+        <field name="model_id" ref="model_tm_organismo"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+<!--        este es para eliminar-->
+        <field name="perm_unlink">0</field>
+    </record>
+
+    <!-- TM OSDE -->
+    <record id="access_tm_osde_system" model="ir.model.access">
+        <field name="name">TM OSDE System</field>
+        <field name="model_id" ref="model_tm_osde"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+    <record id="access_tm_osde_user" model="ir.model.access">
+        <field name="name">TM OSDE User</field>
+        <field name="model_id" ref="model_tm_osde"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+<!--        este es para eliminar-->
+        <field name="perm_unlink">0</field>
+    </record>
+
+    <!-- TM EFGNE (Empresa o forma gestion no estatal)-->
+    <record id="access_tm_efgne_system" model="ir.model.access">
+        <field name="name">TM EFGNE System</field>
+        <field name="model_id" ref="model_tm_efgne"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+    <record id="access_tm_efgne_user" model="ir.model.access">
+        <field name="name">TM EFGNE User</field>
+        <field name="model_id" ref="model_tm_efgne"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+<!--        este es para eliminar-->
+        <field name="perm_unlink">0</field>
+    </record>
+
+    <!-- TM UEBDA (Unidad Estructural Base o Dependencia Autorizada) -->
+    <record id="access_tm_uebda_system" model="ir.model.access">
+        <field name="name">TM UEB/Dependencia System</field>
+        <field name="model_id" ref="model_tm_uebda"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+    <record id="access_tm_uebda_user" model="ir.model.access">
+        <field name="name">TM UEB/Dependencia User</field>
+        <field name="model_id" ref="model_tm_uebda"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+<!--        este es para eliminar-->
+        <field name="perm_unlink">0</field>
+    </record>
+
+<!-- TM MUNICIPIO -->
+    <record id="access_tm_municipio_system" model="ir.model.access">
+        <field name="name">TM Municipio System</field>
+        <field name="model_id" ref="model_tm_municipio"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+    <record id="access_tm_municipio_user" model="ir.model.access">
+        <field name="name">TM Municipio User</field>
+        <field name="model_id" ref="model_tm_municipio"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+<!--        este es para eliminar-->
+        <field name="perm_unlink">0</field>
+    </record>
+
+    <!-- TM PROVEEDOR -->
+    <record id="access_tm_proveedor_system" model="ir.model.access">
+        <field name="name">TM Proveedor System</field>
+        <field name="model_id" ref="model_tm_proveedor"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+    <record id="access_tm_proveedor_user" model="ir.model.access">
+        <field name="name">TM Proveedor User</field>
+        <field name="model_id" ref="model_tm_proveedor"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+<!--        este es para eliminar-->
+        <field name="perm_unlink">0</field>
+    </record>
+
+    <!-- TM SUCURSAL -->
+    <record id="access_tm_sucursal_system" model="ir.model.access">
+        <field name="name">TM Sucursal System</field>
+        <field name="model_id" ref="model_tm_sucursal"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+    <record id="access_tm_sucursal_user" model="ir.model.access">
+        <field name="name">TM Sucursal User</field>
+        <field name="model_id" ref="model_tm_sucursal"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+<!--        este es para eliminar-->
+        <field name="perm_unlink">0</field>
+    </record>
+
+    <!-- TM TEMATICA -->
+    <record id="access_tm_tematica_system" model="ir.model.access">
+        <field name="name">TM Temática System</field>
+        <field name="model_id" ref="model_tm_tematica"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+    <record id="access_tm_tematica_user" model="ir.model.access">
+        <field name="name">TM Temática User</field>
+        <field name="model_id" ref="model_tm_tematica"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+<!--        este es para eliminar-->
+        <field name="perm_unlink">0</field>
+    </record>
+
+    <!-- TM ACTIVIDAD -->
+    <record id="access_tm_actividad_system" model="ir.model.access">
+        <field name="name">TM Actividad System</field>
+        <field name="model_id" ref="model_tm_actividad"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+    <record id="access_tm_actividad_user" model="ir.model.access">
+        <field name="name">TM Actividad User</field>
+        <field name="model_id" ref="model_tm_actividad"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+<!--        este es para eliminar-->
+        <field name="perm_unlink">0</field>
+    </record>
+
+
+    <!-- TM CONTACTO PROVEEDOR -->
+    <record id="access_tm_contacto_proveedor_system" model="ir.model.access">
+        <field name="name">TM Contacto Proveedor System</field>
+        <field name="model_id" ref="model_tm_contacto_proveedor"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+    <record id="access_tm_contacto_proveedor_user" model="ir.model.access">
+        <field name="name">TM Contacto Proveedor User</field>
+        <field name="model_id" ref="model_tm_contacto_proveedor"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+<!--        este es para eliminar-->
+        <field name="perm_unlink">0</field>
+    </record>
+</odoo>

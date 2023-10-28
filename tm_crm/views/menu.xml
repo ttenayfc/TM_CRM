@@ -1,0 +1,42 @@
+<odoo>
+    <menuitem id="menu_tecnomatica"
+              name="Tecnomática"
+              parent="contacts.res_partner_menu_config">
+        <menuitem id="menu_tm_organismo"
+                  name="Organismo"
+                  action="tm_crm.action_tm_organismo"/>
+        <menuitem id="menu_tm_osde"
+                  name="OSDE"
+                  action="tm_crm.action_tm_osde"/>
+        <menuitem id="menu_tm_efgne"
+                  name="Empresa o forma gestión no estatal"
+                  action="tm_crm.action_tm_efgne"/>
+        <menuitem id="menu_tm_uebda"
+                  name="UEB o Dependencia"
+                  action="tm_crm.action_tm_uebda"/>
+        <menuitem id="menu_tm_sucursal"
+                  name="Sucursal"
+                  action="tm_crm.action_tm_sucursal"/>
+        <menuitem id="menu_tm_tematica"
+                      name="Temática"
+                      action="tm_crm.action_tm_tematica"/>
+          <menuitem id="menu_tm_actividad"
+                      name="Actividad"
+                      action="tm_crm.action_tm_actividad"/>
+
+    </menuitem>
+
+    <!-- SALES (MAIN USER MENU) -->
+    <!-- Adicionando al menu  CRM/Sales esta en la vista: crm_menu_sales.xml en el modulo CRM -->
+    <menuitem id="tm_crm_menu_proveedor"
+                  name="Proveedor"
+                  parent="crm.crm_menu_sales"
+                  action="tm_crm.action_tm_proveedor"
+                  sequence="6"/>
+
+    <!-- Adicionando al menu Configuration/Localization/ esta en la vista: contact_view.xml en modulo de Contacts-->
+    <menuitem id="menu_tm_municipio"
+              name="Municipio"
+              action="tm_crm.action_tm_municipio"
+              parent="contacts.menu_country_state_partner"/>
+</odoo>

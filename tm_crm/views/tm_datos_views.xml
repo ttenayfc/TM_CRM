@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Empresa o forma de gestion no estatal (EFGNE) -->
+        <record id="view_efgne_form" model="ir.ui.view">
+            <field name="name">view_efgne_form</field>
+            <field name="model">tm.efgne</field>
+            <field name="arch" type="xml">
+                <form string="Empresa o forma Gestión no Estatal">
+                    <div class="o_row">
+                        <group>
+                            <group>
+                                <field name='name' placeholder="Escriba el nombre"/>
+                                <field name='correo' placeholder="ejemplo: correo@domain"/>
+                                <field name='telefono' widget="phone" placeholder="ejemplo: 7-8775100"/>
+                                <field name='celular' widget="phone" placeholder="ejemplo: 53-55555555"/>
+                            </group>
+                        </group>
+                    </div>
+                    <div class="o_row">
+                        <group>
+                            <group >
+                                <field name='direccion' widget="text" placeholder="Escriba la dirección"/>
+                                <field name='provincia_id' placeholder="Seleccione la provincia"/>
+                                <field name='municipio_id' placeholder="Seleccione el municipio"/>
+                            </group>
+                        </group>
+                    </div>
+                    <field name="partner_ids" invisible="1"/>
+                </form>
+            </field>
+        </record>
+
+        <!-- Unidad Empresarial de Base o Dependencia Autorizada (UEBDA) -->
+        <record id="view_uebda_form" model="ir.ui.view">
+            <field name="name">view_uebda_form</field>
+            <field name="model">tm.uebda</field>
+            <field name="arch" type="xml">
+                <form string="UEB o Dependencia autorizada">
+                    <div class="o_row">
+                        <group>
+                            <group>
+                                <field name='name' placeholder="Escriba el nombre"/>
+                                <field name='correo' placeholder="ejemplo: correo@domain"/>
+                                <field name='telefono' widget="phone" placeholder="ejemplo: 7-8775100"/>
+                                <field name='celular' widget="phone" placeholder="ejemplo: 53-55555555"/>
+                            </group>
+                        </group>
+                    </div>
+                    <div class="o_row">
+                        <group>
+                            <group >
+                                <field name='direccion' widget="text" placeholder="Escriba la dirección"/>
+                                <field name='provincia_id' placeholder="Seleccione la provincia"/>
+                                <field name='municipio_id' placeholder="Seleccione el municipio"/>
+                            </group>
+                        </group>
+                    </div>
+                    <field name="partner_ids" invisible="1"/>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
