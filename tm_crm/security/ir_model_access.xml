@@ -188,7 +188,6 @@
         <field name="perm_unlink">0</field>
     </record>
 
-
     <!-- TM CONTACTO PROVEEDOR -->
     <record id="access_tm_contacto_proveedor_system" model="ir.model.access">
         <field name="name">TM Contacto Proveedor System</field>
@@ -202,6 +201,27 @@
     <record id="access_tm_contacto_proveedor_user" model="ir.model.access">
         <field name="name">TM Contacto Proveedor User</field>
         <field name="model_id" ref="model_tm_contacto_proveedor"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+<!--        este es para eliminar-->
+        <field name="perm_unlink">0</field>
+    </record>
+
+    <!-- TM TIPO CONTACTO PROVEEDOR -->
+    <record id="access_tm_tipo_contacto_system" model="ir.model.access">
+        <field name="name">TM Tipo Contacto Proveedor System</field>
+        <field name="model_id" ref="model_tm_tipo_contacto"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+    <record id="access_tm_tipo_contacto_user" model="ir.model.access">
+        <field name="name">TM Tipo Contacto Proveedor User</field>
+        <field name="model_id" ref="model_tm_tipo_contacto"/>
         <field name="group_id" ref="base.group_user"/>
         <field name="perm_read">1</field>
         <field name="perm_write">1</field>

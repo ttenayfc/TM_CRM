@@ -10,9 +10,21 @@
                     <div class="o_row">
                         <group/>
                         <group/>
+                        <group><group/>
+                            <group colspan="2">
+                                <field name="modelo_fp"/>
+                                <field name="fecha_mod" widget="date"/>
+                            </group>
+                        </group>
+                    </div>
+                    <div class="o_row">
+                        <group/>
+                        <group/>
                         <group>
-                            <field name="modelo_fp"/>
-                            <field name="fecha_mod" widget="date"/>
+                            <group/>
+                            <label for="cliente" string="Seleccione tipo de entidad:"/>
+                            <group><field name="cliente"/></group>
+                            <group><field name="proveedor"/></group>
                         </group>
                     </div>
                     <div class="o_row">
@@ -32,7 +44,7 @@
                                 <field name="zip" placeholder="Escriba código zip"/>
                             </group>
                             <group>
-                                <field name="phone" widget="phone" placeholder="ejemplo: 7-8775100"/>
+                                <field name="phone" widget="phone" placeholder="Escriba su teléfono"/>
                                 <field name="email" widget="email" placeholder="ejemplo: correo@domain"/>
                                 <field name="website" widget="url" placeholder="ejemplo: https://www.odoo.com"/>
                             </group>
@@ -41,7 +53,7 @@
                     <div class="o_row">
                         <group>
                             <group>
-                                <group><field name="fecha_fundacion" widget="date"/></group>
+                                <group><field name="fecha_fundacion" widget="date" placeholder="ejemplo: dd/mm/yyyy"/></group>
                                 <group><field name="no_empleados"/></group>
                             </group>
                             <group>
@@ -90,7 +102,6 @@
                                 <field name="productos" widget="text" placeholder="Escriba los producto(s)"/>
                                 <field name="actividad_id" widget="many2many_tags" placeholder="Seleccione o cree"/>
                             </group>
-
                         </page>
                         <page string="Relaciones" name="relaciones">
                             <!--Relacion de empresas con las que mantiene relaciones comerciales -->
@@ -181,13 +192,13 @@
                             <field name="country_id" placeholder="Seleccione"/>
                         </group>
                         <group>
-                            <field name="phone" placeholder="ejemplo: 7-8775100"/>
-                            <field name="mobile" placeholder="ejemplo: 53-55555555"/>
+                            <field name="phone" placeholder="Escriba su teléfono"/>
+                            <field name="mobile" placeholder="Escriba su teléfono celular"/>
                             <field name="email" placeholder="ejemplo: correo@domain"/>
                         </group>
                     </group>
                     <group>
-                        <field name="category" placeholder="Seleccione"/>
+                        <field name="tipo_contacto" placeholder="Seleccione" widget="many2many_tags"/>
                     </group>
                 </form>
 

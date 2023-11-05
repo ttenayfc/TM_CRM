@@ -31,6 +31,7 @@ class ResPartner(models.Model):
                                       ('ofgne', 'Otra forma de gestion no estatal')
                                   ])
     nuevocli = fields.Boolean(string='Nuevo cliente', help="Marque si es nuevo cliente.")
+    cli_potencial = fields.Boolean(string='Cliente potencial', help="Marque si es cliente potencial.")
     # Empresa o forma gestion no estatal (EFGNE)
     efgne_id = fields.Many2one('tm.efgne', string="Empresa o forma de gestión no estatal")
     uebda_id = fields.Many2one('tm.uebda', string="UEB o Dependencia autorizada",
@@ -98,12 +99,8 @@ class PartnerProveedor(models.Model):
     phone = fields.Char(unaccent=False, string='Teléfono')
     mobile = fields.Char(unaccent=False, string='Celular')
     email = fields.Char(string='Correo electrónico')
-    category = fields.Selection(string='Tipo de contacto',
-                                help="Seleccione tipo de contacto.",
-                                selection=[('Junta Directiva', 'Junta Directiva'),
-                                           ('Accionista', 'Accionista'),
-                                           ('Personas contacto Cuba', 'Personas contacto Cuba'),
-                                           ('Personas contacto Extranjero', 'Personas contacto Extranjero')])
+    tipo_contacto = fields.Many2many('tm.tipo_contacto', relation='tm_contacto_tipo_rel', column1='contacto_id',
+                                   column2='tipo_id', string='Tipo de contacto')
 
     @api.constrains('name', 'phone', 'mobile')
     def _check(self):
@@ -123,6 +120,8 @@ class TMProveedor(models.Model):
 
     modelo_fp = fields.Char(string='Modelo', default="0076AA1-l")
     fecha_mod = fields.Date(string='Fecha actualización', default=datetime.date.today())
+    cliente = fields.Boolean(string='Cliente', help="Marque si es cliente.")
+    proveedor = fields.Boolean(string='Proveedor', help="Marque si es proveedor.")
     name = fields.Char(string='Nombre compañía', required=True)
     siglas = fields.Char(string='Siglas')
     ref = fields.Char(string='Código MINCEX', index=True, size=11, required=True)
@@ -167,7 +166,7 @@ class TMProveedor(models.Model):
             if record.email and not re.match(r"[^@]+@[^@]+\.[^@]+", record.email):
                 raise ValidationError('El campo de correo electrónico no tiene un formato válido.')
             if record.fecha_fundacion and record.fecha_fundacion > date.today():
-                raise ValidationError("La fecha mínima para el 'Fecha fundación' es la fecha actual.")
+                raise ValidationError("Solo se acepta como mínimo para la 'Fecha fundación' la fecha actual.")
 
 
 class TMSucursal(models.Model):
@@ -191,7 +190,6 @@ class TMSucursal(models.Model):
 
 
 class TMTematica(models.Model):
-    _inherit = "tm.datos"
     _name = "tm.tematica"
     _description = "Tematicas de los proveedores internacionales."
 
@@ -216,3 +214,18 @@ class TMActividad(models.Model):
         for record in self:
             if record.name and not record.name.replace(' ', '').isalpha():
                 raise ValidationError("El campo 'Actividad' solo puede contener caracteres.")
+
+
+# Tipos de contactos para los proveedores internacionales
+# (Accionista /Junta Directiva /Contacto extranjero /Contacto Cuba)
+class TMTipoContacto(models.Model):
+    _name = 'tm.tipo_contacto'
+    _description = "Tipos de contactos."
+
+    name = fields.Char(string='Tipo contacto', required=True)
+
+    @api.constrains('name')
+    def _check(self):
+        for record in self:
+            if record.name and not record.name.replace(' ', '').isalpha():
+                raise ValidationError("El campo 'Tipo contacto' solo puede contener caracteres.")

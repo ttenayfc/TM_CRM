@@ -17,7 +17,9 @@
                       <group/>
                       <group>
                           <field name="modelo_fc"/>
-                          <field name="ref" string="Código FC" help="Código autogenerado para la ficha del cliente" readonly="True"/>
+<!--                          <field name="ref" string="Código FC" help="Código autogenerado para la ficha del cliente" readonly="True"/>-->
+                          <field name="nuevocli" help="Marque si es nuevo cliente"/>
+                          <field name="cli_potencial" help="Marque si es nuevo cliente"/>
                       </group>
                     </div>
                 </xpath>
@@ -98,9 +100,6 @@
                                 <field name="organismo_id" placeholder="Seleccione o cree el Organismo"/>
                                 <field name="osde_id" placeholder="Seleccione o cree el OSDE"/>
                                 <field name="no_estatal" placeholder="Seleccione"/>
-                            </group>
-                            <group>
-                                <field name="nuevocli" help="Marque si es nuevo cliente"/>
                             </group>
                             </group>
                     </div>
@@ -194,7 +193,7 @@
                             </form>
                         </field>
                     </page>
-                    <page name="encuesta_id" string="Encuesta">
+                    <page name="encuesta_id" string="Vía de conocimiento TM">
                         <label for="encuesta" string="Por favor, háganos saber por qué vía conoció de nosotros:"/>
                         <div>
                             <field name="encuesta" widget="radio" options="{'vertical': true}" style="width:auto; height:auto; border:3px solid brown; border-radius:22px; padding:9px;"/>

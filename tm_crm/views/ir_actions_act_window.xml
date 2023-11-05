@@ -69,8 +69,8 @@
         <field name="binding_type">action</field>
         <field name="context">{}</field>
         <field name="groups_id" eval="[(6, 0, [])]"/>
-        <field name="help"><![CDATA[Proveedores de TM]]></field>
-        <field name="name">Proveedores</field>
+        <field name="help"><![CDATA[Entidades extranjeras de TM]]></field>
+        <field name="name">Entidades extranjeras</field>
         <field name="res_model">tm.proveedor</field>
         <field name="target">current</field>
         <field name="type">ir.actions.act_window</field>
@@ -125,6 +125,19 @@
         <field name="help"><![CDATA[Contactos de proveedores]]></field>
         <field name="name">Contactos</field>
         <field name="res_model">tm.contacto_proveedor</field>
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- TM TIPOS CONTACTO PROVEEDOR -->
+    <record id="action_tm_tipo_contacto" model="ir.actions.act_window">
+        <field name="binding_type">action</field>
+        <field name="context">{}</field>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field name="help"><![CDATA[Tipos de contactos de proveedores]]></field>
+        <field name="name">Tipo de contacto</field>
+        <field name="res_model">tm.tipo_contacto</field>
         <field name="target">current</field>
         <field name="type">ir.actions.act_window</field>
         <field name="view_mode">tree,form</field>

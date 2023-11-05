@@ -23,13 +23,16 @@
           <menuitem id="menu_tm_actividad"
                       name="Actividad"
                       action="tm_crm.action_tm_actividad"/>
+          <menuitem id="menu_tm_tipo_contacto"
+                      name="Tipos de contacto"
+                      action="tm_crm.action_tm_tipo_contacto"/>
 
     </menuitem>
 
     <!-- SALES (MAIN USER MENU) -->
     <!-- Adicionando al menu  CRM/Sales esta en la vista: crm_menu_sales.xml en el modulo CRM -->
     <menuitem id="tm_crm_menu_proveedor"
-                  name="Proveedor"
+                  name="Entidades extranjeras"
                   parent="crm.crm_menu_sales"
                   action="tm_crm.action_tm_proveedor"
                   sequence="6"/>
