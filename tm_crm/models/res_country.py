@@ -10,7 +10,7 @@ class Country(models.Model):
         string='Country Code', size=3,
         help='The ISO country code in two chars. \nYou can use this field for quick search.')
     nacionalidad = fields.Char(string='Nacionalidad')
-    siglas = fields.Char(string='Siglas')
+    # siglas = fields.Char(string='Siglas')
 
 
 class CountryState(models.Model):

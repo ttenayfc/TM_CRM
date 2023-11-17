@@ -16,5 +16,5 @@ class TMOrganismo(models.Model):
     @api.constrains('name')
     def _check(self):
         for record in self:
-            if record.name and not record.name.replace(' ', '').isalpha():
+            if record.name and not record.name.replace(' ', '').replace('.', '').isalpha():
                 raise ValidationError("El campo 'Descripción' solo puede contener caracteres.")

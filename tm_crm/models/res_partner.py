@@ -22,7 +22,7 @@ class ResPartner(models.Model):
     osde_id = fields.Many2one('tm.osde', string='OSDE', help="Organización Superior de Dirección Empresarial.")
     no_estatal = fields.Selection(string='No Estatal', help="Seleccione tipo de forma de gestion no estatal.",
                                   selection=[
-                                      ('mypime', 'MyPime'),
+                                      ('mipyme', 'MiPyme'),
                                       ('ees', 'Empresa Estatal Socialista'),
                                       ('ueb_ees', 'UEB Empresa Estatal Socialista'),
                                       ('tcp', 'Trabajador Cuenta Propia'),
@@ -31,7 +31,10 @@ class ResPartner(models.Model):
                                       ('ofgne', 'Otra forma de gestion no estatal')
                                   ])
     nuevocli = fields.Boolean(string='Nuevo cliente', help="Marque si es nuevo cliente.")
+    cliente = fields.Boolean(string='Cliente', default=True, help="Marque si es cliente.")
     cli_potencial = fields.Boolean(string='Cliente potencial', help="Marque si es cliente potencial.")
+    proveedor = fields.Boolean(string='Proveedor', help="Marque si es proveedor.")
+    prov_potencial = fields.Boolean(string='Proveedor potencial', help="Marque si es proveedor potencial.")
     # Empresa o forma gestion no estatal (EFGNE)
     efgne_id = fields.Many2one('tm.efgne', string="Empresa o forma de gestión no estatal")
     uebda_id = fields.Many2one('tm.uebda', string="UEB o Dependencia autorizada",

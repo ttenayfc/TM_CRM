@@ -6,6 +6,9 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
+                <div name="button_box" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </div>
                 <xpath expr="//field[@id='company']" position="attributes">
                     <attribute name="placeholder">Escriba el nombre de la empresa</attribute>
                 </xpath>
@@ -15,12 +18,24 @@
                 <xpath expr="//field[@name='image_1920']" position="after">
                     <div class="o_row">
                       <group/>
+                      <group/>
+                      <group/>
                       <group>
                           <field name="modelo_fc"/>
 <!--                          <field name="ref" string="Código FC" help="Código autogenerado para la ficha del cliente" readonly="True"/>-->
-                          <field name="nuevocli" help="Marque si es nuevo cliente"/>
-                          <field name="cli_potencial" help="Marque si es nuevo cliente"/>
                       </group>
+                    </div>
+                    <div class="o_row">
+                        <group/>
+                        <group/>
+                        <group>
+                          <field name="nuevocli" help="Marque si es nuevo cliente"/>
+                          <field name="cli_potencial" help="Marque si es cliente potencial"/>
+                        </group>
+                        <group>
+                          <field name="proveedor" help="Marque si es proveedor"/>
+                          <field name="prov_potencial" help="Marque si es proveedor potencial."/>
+                        </group>
                     </div>
                 </xpath>
                 <!--group-->
@@ -200,11 +215,11 @@
                         </div>
                     </page>
                 </xpath>
-                 <xpath expr="//notebook//page[@name='encuesta_id']" position="before">
-                     <page name="category_page" string="Categoría(s)">
-                        <field name='category_id'/>
-                     </page>
-                 </xpath>
+<!--                 <xpath expr="//notebook//page[@name='encuesta_id']" position="before">-->
+<!--                     <page name="category_page" string="Categoría(s)">-->
+<!--                        <field name='category_id'/>-->
+<!--                     </page>-->
+<!--                 </xpath>-->
                     <!-- cierre notebook colspan="4"-->
                 <xpath expr="//notebook" position="after">
                     <br/>
